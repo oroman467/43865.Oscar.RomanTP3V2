@@ -1,0 +1,19 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block cabecera %}
+    Buscador
+{% endblock cabecera %}
+
+{% block contenido %}
+
+<body>
+    <form action="/aplicacion/buscar2" method=get>
+        {% csrf_token %}
+        <input type="text" name="precio" id="precio">
+        <input type="submit" value="Buscar"> 
+    </form> 
+</body>
+</html>
+
+{% endblock contenido %}

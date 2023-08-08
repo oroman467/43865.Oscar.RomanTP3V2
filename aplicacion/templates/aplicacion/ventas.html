@@ -1,0 +1,62 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block titulo %}
+    Ventas
+{% endblock titulo %}
+
+{% block cabecera %}
+    Listado de Ventas
+{% endblock cabecera %}
+
+{% block contenido %}
+<table>
+    <tr>
+        <td width="200"><h2>Ventas</h2></td>
+        <td>
+            <a
+            href="{#}"
+            class="btn btn-primary btn-sm"
+            ><i class="fa fa-plus fa-lg" title="New Record"> </i>
+            </a>
+        </td>
+    </tr>
+</table>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Detalle</th>
+            <th>Tipo</th>     
+            <th>Precio</th>
+            <th>Acciones</th>    
+        </tr>
+    </thead>
+    <tbody>
+    {% for venta in ventas %}
+    <tr>
+        <td>{{ venta.id }}</td>
+        <td>{{ venta.nombre }}</td>
+        <td>{{ venta.tipo }}</td>
+        <td>{{ venta.precio }}</td>
+        <td>
+            <a
+              href="{#}"
+              class="btn btn-primary"
+              style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+              ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+            </a>
+            <a
+              href="{#}"
+              class="btn btn-danger"
+              style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+              ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
+            </a>
+          </td> 
+        </tr>
+    </tr>
+    {% endfor %}
+    </tbody> 
+</table>
+{% endblock contenido %}

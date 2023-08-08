@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NuevoEquipo</title>
+</head>
+<body>
+    <body bgcolor="lightblue">
+    <h2>Ingresar Nuevo Equipo Formulario N 1</h2>
+    <form action="" method="post">
+            {% csrf_token %}
+            <p>Nombre:<input type="text" name="nombre" id="nombre"></p>
+            <p>Tipo:<input type="number" name="tipo" id="tipo"></p>
+            <input type="submit" value="Enviar">
+        </form>
+</body>
+</html>

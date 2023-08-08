@@ -1,0 +1,32 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{%block cabecera%}
+ Precios de Alquiler {{precios}}
+{%endblock cabecera%}
+
+{% block contenido %}
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>nombre</th>
+                <th>tipo</th>     
+                <th>precio</th>  
+            </tr>
+        </thead>
+        <tbody>
+        {% for alquiler in alquileres %}
+        <tr>
+            <td>{{ alquiler.id }}</td>
+            <td>{{ alquiler.nombre }}</td>
+            <td>{{ alquiler.tipo }}</td>
+            <td>{{ alquiler.precio }}</td>
+        </tr>
+        {% endfor %}
+        </tbody> 
+    </table>
+    
+{% endblock contenido %}
